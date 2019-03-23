@@ -42,6 +42,12 @@ public class UserModel implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @Column(name = "birthday")
     private Date birthday;
+    @ApiModelProperty(value = "电话",example = "18032135459")
+    @Column(name = "phone",length = 11)
+    private String phone;
+    @ApiModelProperty(name = "地址",example = "河北省石家庄市桥西区大谈村")
+    @Column(name = "address")
+    private String address;
     @ApiModelProperty(value = "数据版本信息", example = "修改删除时必填，从后台获取")
     @Version
     private long version;

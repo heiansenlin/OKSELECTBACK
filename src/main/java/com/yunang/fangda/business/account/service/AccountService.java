@@ -22,6 +22,8 @@ public interface AccountService {
 
     ResponseResult<AccountModel> findById(String uuid);
 
+    ResponseResult<AccountModel> getOneByPhone(String uuid);
+
     ResponseResult<AccountModel> findByAccount(String account);
 
     ResponseResult<Page<AccountModel>> findAll(int pageNow, int pageSize, AccountModel model);

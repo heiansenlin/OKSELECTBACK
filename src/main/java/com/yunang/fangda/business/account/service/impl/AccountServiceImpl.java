@@ -130,6 +130,16 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    public ResponseResult<AccountModel> getOneByPhone(String phone) {
+        List<AccountModel> byPhone = jpa.findByUserModelPhone(phone);
+        if(byPhone.size()>0){
+        return new ResponseResult<>(true,"成功",byPhone.get(0));
+        }else {
+            return new ResponseResult<>(false,"记录未找到",null);
+        }
+    }
+
+    @Override
     public ResponseResult<AccountModel> findByAccount(String account) {
         List<AccountModel> list = jpa.findByAccount(account);
         if (list.size() > 0)
