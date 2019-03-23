@@ -57,7 +57,7 @@ public class OrderServiceImpl implements OrderService {
             if (StringUtils.isEmpty(oneByPhone.getData()))
                 return new ResponseResult<>(false, "该用户未查询到", null);
             String account = oneByPhone.getData().getAccount();
-            List<OrderModel> byAccountAndBusid = jpa.findByAccountAndBusid(account, accId);
+            List<OrderModel> byAccountAndBusid = jpa.findByAccountIdAndBusid(account, accId);
             if (byAccountAndBusid.size()<=0){
                 return new ResponseResult<>(false, "未查询到订单", null);
             }else {

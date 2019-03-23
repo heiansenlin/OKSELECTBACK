@@ -16,6 +16,6 @@ import java.util.List;
  */
 public interface OrderJpa extends JpaSpecificationExecutor<OrderModel>,
         JpaRepository<OrderModel, String> {
-    List<OrderModel> findByAccountAndBusid(String account,String accid);
+    List<OrderModel> findByAccountIdAndBusid(String account,String accid);
     List<OrderModel> findByTypeAndBusid(String type,String accid);
 }

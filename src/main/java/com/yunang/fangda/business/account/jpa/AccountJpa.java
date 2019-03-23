@@ -24,7 +24,7 @@ public interface AccountJpa extends JpaSpecificationExecutor<AccountModel>,
     List<AccountModel> findByAccount(String account);
 
 //    @Query(value = "select a.* from account_table a left join user_table u on a.user = u.uuid where u.phone = #{phone}",nativeQuery = true)
-    List<AccountModel> findByUserModelPhone(@Param(value = "phone") String phone);
+    List<AccountModel> findByUserPhone(@Param(value = "phone") String phone);
 
     List<AccountModel> findByAccountLike(String account);
 }

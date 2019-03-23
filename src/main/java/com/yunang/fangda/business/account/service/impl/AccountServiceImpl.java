@@ -131,7 +131,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public ResponseResult<AccountModel> getOneByPhone(String phone) {
-        List<AccountModel> byPhone = jpa.findByUserModelPhone(phone);
+        List<AccountModel> byPhone = jpa.findByUserPhone(phone);
         if(byPhone.size()>0){
         return new ResponseResult<>(true,"成功",byPhone.get(0));
         }else {
