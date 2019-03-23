@@ -63,7 +63,6 @@ public class AccountModel implements Serializable {
     @JoinColumn(name = "position_id", referencedColumnName = "uuid")
     private PositionModel positionModel;
 
-
     @ApiModelProperty(value = "数据版本信息", example = "修改删除时必填，从后台获取")
     @Version
     private Long version;

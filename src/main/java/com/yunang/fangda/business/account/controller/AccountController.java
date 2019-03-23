@@ -103,6 +103,7 @@ public class AccountController {
                                                @PathVariable("uuid") String uuid) {
         return service.findById(uuid);
     }
+
     @ApiOperation(value = "根据用户电话查询用户信息")
     @RequestMapping(value = "/account/{phone}",method = RequestMethod.GET)
     public ResponseResult<AccountModel> getOneByPhone(@ApiParam(value = "用户电话",required = true,example = "输入查询的电话")
