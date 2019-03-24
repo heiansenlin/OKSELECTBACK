@@ -105,9 +105,10 @@ public class AccountController {
     }
 
     @ApiOperation(value = "根据用户电话查询用户信息")
-    @RequestMapping(value = "/account/{phone}",method = RequestMethod.GET)
+    @RequestMapping(value = "/getOneByPhone",method = RequestMethod.POST)
     public ResponseResult<AccountModel> getOneByPhone(@ApiParam(value = "用户电话",required = true,example = "输入查询的电话")
-                                                      @PathVariable("phone") String phone){
+                                                      @RequestBody AccountModel accountModel){
+        String phone = accountModel.getUser().getPhone();
         return  service.getOneByPhone(phone);
     }
 

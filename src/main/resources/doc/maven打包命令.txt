@@ -1,1 +1,5 @@
 mvn install -Dmaven.test.skip=true
+
+
+/***指定编码格式运行jar**/
+java -Dfile.encoding=utf-8 -jar XXX.jar
